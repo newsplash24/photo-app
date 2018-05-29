@@ -10,7 +10,9 @@ import Foundation
 
 class Constants {
     
-    static let baseURL = "https://jsonplaceholder.typicode.com/"
-    static let photos = "photos"
+    class API {
+        static let baseURL = "https://jsonplaceholder.typicode.com/"
+        static let photos = "photos"
+    }
     
 }

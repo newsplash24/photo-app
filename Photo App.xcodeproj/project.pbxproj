@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		852A16A8D7A47E6BF06A2683 /* Pods_Photo_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ED436F365751C18F6600E36 /* Pods_Photo_App.framework */; };
 		F102DF8920BD843100A7989D /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F102DF8820BD843100A7989D /* AlbumModel.swift */; };
-		F102DF8B20BD844E00A7989D /* GetAlbumsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F102DF8A20BD844E00A7989D /* GetAlbumsViewModel.swift */; };
 		F102DF9020BD857200A7989D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F102DF8F20BD857200A7989D /* Constants.swift */; };
+		F102DF9320BD8E9F00A7989D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F102DF9220BD8E9F00A7989D /* LoadingView.swift */; };
+		F102DF9520BD920800A7989D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16844F420BCDC6B005294FD /* ViewController.swift */; };
+		F102DF9620BD920D00A7989D /* GetAlbumsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F102DF8A20BD844E00A7989D /* GetAlbumsViewModel.swift */; };
 		F16844F320BCDC6B005294FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16844F220BCDC6B005294FD /* AppDelegate.swift */; };
-		F16844F520BCDC6B005294FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16844F420BCDC6B005294FD /* ViewController.swift */; };
 		F16844F820BCDC6B005294FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F16844F620BCDC6B005294FD /* Main.storyboard */; };
 		F16844FA20BCDC6F005294FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F16844F920BCDC6F005294FD /* Assets.xcassets */; };
 		F16844FD20BCDC6F005294FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F16844FB20BCDC6F005294FD /* LaunchScreen.storyboard */; };
@@ -25,6 +26,7 @@
 		F102DF8820BD843100A7989D /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
 		F102DF8A20BD844E00A7989D /* GetAlbumsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAlbumsViewModel.swift; sourceTree = "<group>"; };
 		F102DF8F20BD857200A7989D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F102DF9220BD8E9F00A7989D /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		F16844EF20BCDC6B005294FD /* Photo App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F16844F220BCDC6B005294FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F16844F420BCDC6B005294FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,14 @@
 			path = Skeletons;
 			sourceTree = "<group>";
 		};
+		F102DF9120BD8E8C00A7989D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F102DF9220BD8E9F00A7989D /* LoadingView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		F16844E620BCDC6B005294FD = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +118,7 @@
 		F16844F120BCDC6B005294FD /* Photo App */ = {
 			isa = PBXGroup;
 			children = (
+				F102DF9120BD8E8C00A7989D /* Helpers */,
 				F102DF8E20BD855F00A7989D /* Skeletons */,
 				F102DF8D20BD854F00A7989D /* ViewModels */,
 				F102DF8C20BD854100A7989D /* Models */,
@@ -217,12 +228,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Photo App/Pods-Photo App-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -237,11 +250,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F102DF9520BD920800A7989D /* ViewController.swift in Sources */,
 				F102DF9020BD857200A7989D /* Constants.swift in Sources */,
-				F16844F520BCDC6B005294FD /* ViewController.swift in Sources */,
 				F102DF8920BD843100A7989D /* AlbumModel.swift in Sources */,
+				F102DF9620BD920D00A7989D /* GetAlbumsViewModel.swift in Sources */,
 				F16844F320BCDC6B005294FD /* AppDelegate.swift in Sources */,
-				F102DF8B20BD844E00A7989D /* GetAlbumsViewModel.swift in Sources */,
+				F102DF9320BD8E9F00A7989D /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

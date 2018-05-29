@@ -9,14 +9,14 @@
 import Foundation
 import ObjectMapper
 
-class AlbumModel : Mappable {
+class AlbumModel :  NSObject,  Mappable {
     
     var id : Int?
     var albumId : Int?
     var title : String?
     var url : String?
     var thumbnailUrl : String?
-    var isSelected : Bool?
+    var isSelected : Bool = false
    
     
     required init?(map: Map){
