@@ -10,10 +10,9 @@ import Foundation
 import UIKit
 
 class AlbumCell : UITableViewCell {
+    // MARK: IBOutlets
     @IBOutlet weak var albumPhoto: UIImageView!
-    
     @IBOutlet weak var albumTitle: UITextView!
-    
     @IBOutlet weak var albumID: UILabel!
     @IBOutlet weak var radioButton: UIButton!
     
@@ -25,7 +24,6 @@ class AlbumCell : UITableViewCell {
             sender.tintColor = UIColor.clear
         }
     }
-    
     
 }
 

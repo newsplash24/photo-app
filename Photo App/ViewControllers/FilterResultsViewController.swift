@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 class FilterResultsViewController : UIViewController {
-    
+    // MARK: IBOutlets
     @IBOutlet weak var filteredTableView: UITableView!
-    
+    // MARK: vars
     var filteredAlbums : [AlbumModel]?
     
     override func viewDidLoad() {
@@ -22,7 +22,8 @@ class FilterResultsViewController : UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
     self.navigationItem.title = "Filtered"
-     self.navigationItem.hidesBackButton = true
+        // decided to show the back button for better UX
+//     self.navigationItem.hidesBackButton = true
     }
 }
 

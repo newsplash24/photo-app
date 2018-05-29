@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+// Planned to use t but preffered the nature way in the end
 class RadioButton: UIButton {
     // Images
     let checkedImage = UIImage(named: "ic_radio_selected")! as UIImage
