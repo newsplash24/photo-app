@@ -13,6 +13,8 @@
 		F102DF9320BD8E9F00A7989D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F102DF9220BD8E9F00A7989D /* LoadingView.swift */; };
 		F102DF9520BD920800A7989D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16844F420BCDC6B005294FD /* ViewController.swift */; };
 		F102DF9620BD920D00A7989D /* GetAlbumsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F102DF8A20BD844E00A7989D /* GetAlbumsViewModel.swift */; };
+		F102DF9920BDA19300A7989D /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F102DF9820BDA19300A7989D /* RadioButton.swift */; };
+		F102DF9B20BDAA0200A7989D /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F102DF9A20BDAA0200A7989D /* AlbumCell.swift */; };
 		F16844F320BCDC6B005294FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16844F220BCDC6B005294FD /* AppDelegate.swift */; };
 		F16844F820BCDC6B005294FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F16844F620BCDC6B005294FD /* Main.storyboard */; };
 		F16844FA20BCDC6F005294FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F16844F920BCDC6F005294FD /* Assets.xcassets */; };
@@ -27,6 +29,8 @@
 		F102DF8A20BD844E00A7989D /* GetAlbumsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAlbumsViewModel.swift; sourceTree = "<group>"; };
 		F102DF8F20BD857200A7989D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F102DF9220BD8E9F00A7989D /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		F102DF9820BDA19300A7989D /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		F102DF9A20BDAA0200A7989D /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 		F16844EF20BCDC6B005294FD /* Photo App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F16844F220BCDC6B005294FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F16844F420BCDC6B005294FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +101,15 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		F102DF9720BDA17F00A7989D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F102DF9820BDA19300A7989D /* RadioButton.swift */,
+				F102DF9A20BDAA0200A7989D /* AlbumCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		F16844E620BCDC6B005294FD = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +131,7 @@
 		F16844F120BCDC6B005294FD /* Photo App */ = {
 			isa = PBXGroup;
 			children = (
+				F102DF9720BDA17F00A7989D /* Views */,
 				F102DF9120BD8E8C00A7989D /* Helpers */,
 				F102DF8E20BD855F00A7989D /* Skeletons */,
 				F102DF8D20BD854F00A7989D /* ViewModels */,
@@ -251,7 +265,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F102DF9520BD920800A7989D /* ViewController.swift in Sources */,
+				F102DF9920BDA19300A7989D /* RadioButton.swift in Sources */,
 				F102DF9020BD857200A7989D /* Constants.swift in Sources */,
+				F102DF9B20BDAA0200A7989D /* AlbumCell.swift in Sources */,
 				F102DF8920BD843100A7989D /* AlbumModel.swift in Sources */,
 				F102DF9620BD920D00A7989D /* GetAlbumsViewModel.swift in Sources */,
 				F16844F320BCDC6B005294FD /* AppDelegate.swift in Sources */,

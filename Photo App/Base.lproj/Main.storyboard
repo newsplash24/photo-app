@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +14,102 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Photo_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kwH-fk-ZEV">
+                                <rect key="frame" x="5" y="40" width="365" height="500.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="albumCell" rowHeight="130" id="d3N-kq-N8n" customClass="AlbumCell" customModule="Photo_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="365" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d3N-kq-N8n" id="CeR-bk-ggc">
+                                            <rect key="frame" x="0.0" y="0.0" width="365" height="129.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Oa-do-50Q">
+                                                    <rect key="frame" x="0.0" y="35" width="130" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="130" id="Rwn-hs-tdb"/>
+                                                        <constraint firstAttribute="height" constant="60" id="sxj-eV-84V"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mqs-UG-ocz">
+                                                    <rect key="frame" x="143" y="79" width="33" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5go-k2-21o" customClass="RadioButton" customModule="Photo_App" customModuleProvider="target">
+                                                    <rect key="frame" x="325" y="50" width="30" height="30"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="Gso-Sp-lrh"/>
+                                                        <constraint firstAttribute="width" constant="30" id="Sot-f7-C4G"/>
+                                                    </constraints>
+                                                </view>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Album Title" translatesAutoresizingMaskIntoConstraints="NO" id="1Nh-7l-rtn">
+                                                    <rect key="frame" x="138" y="35" width="184" height="43"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="5Oa-do-50Q" firstAttribute="leading" secondItem="CeR-bk-ggc" secondAttribute="leading" id="0bm-h7-7QR"/>
+                                                <constraint firstAttribute="trailing" secondItem="5go-k2-21o" secondAttribute="trailing" constant="10" id="DWc-zR-KDj"/>
+                                                <constraint firstItem="Mqs-UG-ocz" firstAttribute="leading" secondItem="1Nh-7l-rtn" secondAttribute="leading" constant="5" id="IIh-y2-87x"/>
+                                                <constraint firstItem="1Nh-7l-rtn" firstAttribute="leading" secondItem="5Oa-do-50Q" secondAttribute="trailing" constant="8" id="Q4k-H5-sMZ"/>
+                                                <constraint firstItem="1Nh-7l-rtn" firstAttribute="top" secondItem="5Oa-do-50Q" secondAttribute="top" id="U77-P1-rOt"/>
+                                                <constraint firstItem="Mqs-UG-ocz" firstAttribute="bottom" secondItem="5Oa-do-50Q" secondAttribute="bottom" id="bMf-jl-fWd"/>
+                                                <constraint firstItem="5go-k2-21o" firstAttribute="leading" secondItem="1Nh-7l-rtn" secondAttribute="trailing" constant="3" id="dLP-Uo-feo"/>
+                                                <constraint firstItem="Mqs-UG-ocz" firstAttribute="top" secondItem="1Nh-7l-rtn" secondAttribute="bottom" constant="1" id="gvH-2d-kgQ"/>
+                                                <constraint firstItem="5go-k2-21o" firstAttribute="centerY" secondItem="CeR-bk-ggc" secondAttribute="centerY" id="lMS-Rr-fEN"/>
+                                                <constraint firstItem="5Oa-do-50Q" firstAttribute="centerY" secondItem="CeR-bk-ggc" secondAttribute="centerY" id="sMd-ee-ZmG"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="albumID" destination="Mqs-UG-ocz" id="laW-mS-O30"/>
+                                            <outlet property="albumPhoto" destination="5Oa-do-50Q" id="71Z-BY-oIP"/>
+                                            <outlet property="albumTitle" destination="1Nh-7l-rtn" id="u3w-Kk-ghH"/>
+                                            <outlet property="radioButton" destination="5go-k2-21o" id="eVI-Ra-h7M"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="krx-fz-055">
+                                <rect key="frame" x="105" y="570.5" width="165" height="30"/>
+                                <color key="backgroundColor" red="0.91158062219619751" green="0.25094631314277649" blue="0.40640118718147278" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="165" id="EEe-0d-AZ1"/>
+                                </constraints>
+                                <state key="normal" title="filter done">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="kwH-fk-ZEV" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.75" id="2iT-6H-sGU"/>
+                            <constraint firstItem="krx-fz-055" firstAttribute="top" secondItem="kwH-fk-ZEV" secondAttribute="bottom" constant="30" id="8fg-e8-txB"/>
+                            <constraint firstItem="krx-fz-055" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="CSQ-Bi-gqV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kwH-fk-ZEV" secondAttribute="trailing" constant="5" id="rPb-Bw-0hS"/>
+                            <constraint firstItem="kwH-fk-ZEV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="tK5-lP-BsL"/>
+                            <constraint firstItem="kwH-fk-ZEV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="yyc-7i-6bg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="albumsTableView" destination="kwH-fk-ZEV" id="VhY-qB-9xh"/>
+                        <outlet property="filterButton" destination="krx-fz-055" id="Zmr-BK-aQw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="116" y="85.907046476761622"/>
         </scene>
     </scenes>
 </document>
