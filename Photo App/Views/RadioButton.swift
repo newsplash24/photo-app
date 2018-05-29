@@ -27,7 +27,7 @@ class RadioButton: UIButton {
     
     override func awakeFromNib() {
         self.addTarget(self, action:#selector(buttonClicked(sender:)), for: UIControlEvents.touchUpInside)
-        self.isChecked = false
+        self.isChecked = true
     }
     
     func buttonClicked(sender: UIButton) {

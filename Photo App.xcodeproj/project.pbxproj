@@ -19,6 +19,8 @@
 		F16844F820BCDC6B005294FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F16844F620BCDC6B005294FD /* Main.storyboard */; };
 		F16844FA20BCDC6F005294FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F16844F920BCDC6F005294FD /* Assets.xcassets */; };
 		F16844FD20BCDC6F005294FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F16844FB20BCDC6F005294FD /* LaunchScreen.storyboard */; };
+		F1F10F0420BDEA41005D92F7 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F10F0320BDEA41005D92F7 /* Utility.swift */; };
+		F1F10F0720BDEB3A005D92F7 /* FilterResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F10F0620BDEB3A005D92F7 /* FilterResultsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		F16844F920BCDC6F005294FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F16844FC20BCDC6F005294FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F16844FE20BCDC6F005294FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1F10F0320BDEA41005D92F7 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		F1F10F0620BDEB3A005D92F7 /* FilterResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterResultsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,8 @@
 		F16844F120BCDC6B005294FD /* Photo App */ = {
 			isa = PBXGroup;
 			children = (
+				F1F10F0520BDEB23005D92F7 /* ViewControllers */,
+				F1F10F0220BDEA2C005D92F7 /* Utility */,
 				F102DF9720BDA17F00A7989D /* Views */,
 				F102DF9120BD8E8C00A7989D /* Helpers */,
 				F102DF8E20BD855F00A7989D /* Skeletons */,
@@ -144,6 +150,22 @@
 				F16844FE20BCDC6F005294FD /* Info.plist */,
 			);
 			path = "Photo App";
+			sourceTree = "<group>";
+		};
+		F1F10F0220BDEA2C005D92F7 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				F1F10F0320BDEA41005D92F7 /* Utility.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		F1F10F0520BDEB23005D92F7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F1F10F0620BDEB3A005D92F7 /* FilterResultsViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,10 +288,12 @@
 			files = (
 				F102DF9520BD920800A7989D /* ViewController.swift in Sources */,
 				F102DF9920BDA19300A7989D /* RadioButton.swift in Sources */,
+				F1F10F0420BDEA41005D92F7 /* Utility.swift in Sources */,
 				F102DF9020BD857200A7989D /* Constants.swift in Sources */,
 				F102DF9B20BDAA0200A7989D /* AlbumCell.swift in Sources */,
 				F102DF8920BD843100A7989D /* AlbumModel.swift in Sources */,
 				F102DF9620BD920D00A7989D /* GetAlbumsViewModel.swift in Sources */,
+				F1F10F0720BDEB3A005D92F7 /* FilterResultsViewController.swift in Sources */,
 				F16844F320BCDC6B005294FD /* AppDelegate.swift in Sources */,
 				F102DF9320BD8E9F00A7989D /* LoadingView.swift in Sources */,
 			);

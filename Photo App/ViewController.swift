@@ -18,6 +18,16 @@ class ViewController: UIViewController {
     
     var albumsList : [AlbumModel]?
     
+    var selectedAlbumCells = [AlbumModel]()
+    
+    @IBAction func filterBtnTapped(_ sender: Any) {
+        if selectedAlbumCells.count <= 0 {
+            Utility.showAlert(controller: self, title: "", message: "Please select something!", buttonTitle: "OK")
+        }
+        else {
+            
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,6 +37,7 @@ class ViewController: UIViewController {
         albumsTableView.delegate = self
         albumsTableView.dataSource = self
         filterButton.roundCorners([.allCorners], radius: 10)
+//        albumsTableView.delaysContentTouches = false
        
     }
 
@@ -43,6 +54,27 @@ class ViewController: UIViewController {
             
         }
     }
+    
+    func radioButtonTapped(sender: RadioButton!) {
+       let tag = sender.tag
+        if sender.isSelected {
+            albumsList![tag].isSelected = true
+//            sender.isChecked = true
+        if !(selectedAlbumCells.contains(albumsList![tag])) {
+            selectedAlbumCells.append(albumsList![tag])
+        }
+            
+        }
+        else {
+            albumsList![tag].isSelected = false
+//            sender.isSelected = false
+            if selectedAlbumCells.contains(albumsList![tag]) {
+                let indx = selectedAlbumCells.index(of: albumsList![tag])
+                selectedAlbumCells.remove(at: indx!)
+            }
+            
+        }
+    }
 
 }
 extension ViewController : UITableViewDelegate, UITableViewDataSource {
@@ -56,7 +88,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "albumCell") as! AlbumCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "albumCell", for: indexPath) as! AlbumCell
         
         if let title = albumsList?[indexPath.row].title{
         cell.albumTitle.text = title
@@ -66,11 +98,36 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
             cell.albumID.text = "Album: \(albumID)"
         }
         
+        cell.radioButton.tag = indexPath.row
+        cell.radioButton.addTarget(self, action: #selector(self.radioButtonTapped(sender:)), for: .touchUpInside)
+        
+        if (albumsList?[indexPath.row].isSelected)! {
+            cell.radioButton.isSelected = true
+        }
+        else {
+            cell.radioButton.isSelected = false
+        }
+        
+        DispatchQueue.global(qos: .background).async {
+            do {
+                let url = URL(string: ((self.albumsList?[indexPath.row].thumbnailUrl)!))
+                let data = try Data(contentsOf: url!)
+                let image = UIImage(data: data)
+                DispatchQueue.main.async {
+                    cell.albumPhoto.image = image
+                }
+                
+            }
+            catch{
+                print(error)
+            }
+        }
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+        return 130
     }
     
 }

@@ -15,7 +15,22 @@ class AlbumCell : UITableViewCell {
     @IBOutlet weak var albumTitle: UITextView!
     
     @IBOutlet weak var albumID: UILabel!
-    @IBOutlet weak var radioButton: RadioButton!
+    @IBOutlet weak var radioButton: UIButton!
+    
+
+    @IBAction func radioBtnTapped(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            sender.isEnabled = true
+            sender.tintColor = UIColor.clear
+        }
+    }
+    
+    override func awakeFromNib() {
+      radioButton.adjustsImageWhenDisabled = false
+    }
+    
+    
     
 }
 
