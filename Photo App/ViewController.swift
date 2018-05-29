@@ -25,7 +25,11 @@ class ViewController: UIViewController {
             Utility.showAlert(controller: self, title: "", message: "Please select something!", buttonTitle: "OK")
         }
         else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "FilterResultsViewController") as! FilterResultsViewController
             
+            controller.filteredAlbums = selectedAlbumCells
+            self.navigationController?.pushViewController(controller, animated: true)
         }
     }
     override func viewDidLoad() {
@@ -36,15 +40,27 @@ class ViewController: UIViewController {
           self.addObserver(self, forKeyPath: #keyPath(getAlbumsViewModel.albumList), options:  [.old, .new], context: nil)
         albumsTableView.delegate = self
         albumsTableView.dataSource = self
-        filterButton.roundCorners([.allCorners], radius: 10)
+        
+     
+        
 //        albumsTableView.delaysContentTouches = false
        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        self.navigationItem.title = "Check To Filter This List"
+    }
+    
+    override func viewWillLayoutSubviews() {
+        filterButton.roundCorners([.allCorners], radius: 10)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == #keyPath(getAlbumsViewModel.albumList) {

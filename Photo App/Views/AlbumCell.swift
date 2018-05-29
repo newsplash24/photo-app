@@ -26,11 +26,6 @@ class AlbumCell : UITableViewCell {
         }
     }
     
-    override func awakeFromNib() {
-      radioButton.adjustsImageWhenDisabled = false
-    }
-    
-    
     
 }
 
