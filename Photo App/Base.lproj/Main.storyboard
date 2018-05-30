@@ -87,8 +87,11 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="krx-fz-055">
-                                <rect key="frame" x="75" y="589.5" width="225" height="30"/>
+                                <rect key="frame" x="75" y="589.5" width="225" height="40"/>
                                 <color key="backgroundColor" red="0.91158062219619751" green="0.25094631314277649" blue="0.40640118718147278" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="la0-5H-4Yp"/>
+                                </constraints>
                                 <state key="normal" title="filter done">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>

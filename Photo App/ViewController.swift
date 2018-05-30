@@ -86,6 +86,10 @@ class ViewController: UIViewController {
         }
     }
     
+    deinit {
+        removeObserver(self, forKeyPath: #keyPath(getAlbumsViewModel.albumList))
+    }
+    
 }
 extension ViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
